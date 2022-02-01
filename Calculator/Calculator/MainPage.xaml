@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MainPage">
+
+    <StackLayout Padding="20" VerticalOptions="Fill" BackgroundColor="AliceBlue">
+
+
+        <Label Text="Adding Numbers"
+               Margin="30"
+               HorizontalTextAlignment="Center"
+               FontSize="Large"
+               TextColor="Blue"
+               FontAttributes="Bold,Italic"
+               />
+
+
+        <Label Text="First Number"
+               TextColor="Black"
+               FontAttributes="Italic"
+               />
+        <Entry x:Name="edtFirstNumber"
+                   Keyboard="Numeric"
+                   Placeholder="First Number"
+                   IsSpellCheckEnabled="False"
+                   />
+        <Label Text="Second Number"
+               TextColor="Black"
+               FontAttributes="Italic"
+               />
+        <Entry x:Name="edtSecondNumber"
+                   Keyboard="Numeric"
+                   Placeholder="Second Number"
+                   IsSpellCheckEnabled="False"
+                   />
+        
+        <StackLayout Orientation="Horizontal" Spacing="7">
+        <Button x:Name="btnAdd"
+                Text="+"
+                Clicked="btnAdd_Clicked"
+                />
+        <Button x:Name="btnSubtract"
+                Text="-"
+                Clicked="btnSubtract_Clicked"
+                />
+        <Button x:Name="btnMultiply"
+                Text="*"
+                Clicked="btnMultiply_Clicked"
+                />
+        <Button x:Name="btnDivide"
+                Text="/"
+                Clicked="btnDivide_Clicked"
+                />
+        </StackLayout>
+
+        <Label x:Name="lblResult"
+               Text="Result goes here"
+               FontSize="Large"
+               TextColor="green"
+               HorizontalTextAlignment="Center"
+               Margin="30,30,30,0"
+               />
+
+
+    </StackLayout>
+
+</ContentPage>
