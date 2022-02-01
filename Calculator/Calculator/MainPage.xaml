@@ -5,52 +5,43 @@
 
     <StackLayout Padding="20" VerticalOptions="Fill" BackgroundColor="BlanchedAlmond">
 
-
         <Label Text="Adding Numbers"
                Margin="30"
                HorizontalTextAlignment="Center"
                FontSize="Large"
                TextColor="Blue"
-               FontAttributes="Bold,Italic"
-               />
-
+               FontAttributes="Bold,Italic" />
 
         <Label Text="First Number"
                TextColor="Black"
-               FontAttributes="Italic"
-               />
+               FontAttributes="Italic" />
         <Entry x:Name="edtFirstNumber"
                    Keyboard="Numeric"
                    Placeholder="First Number"
                    IsSpellCheckEnabled="False"
-                   />
+                   TextChanged="edtNumber_TextChanged" />
         <Label Text="Second Number"
                TextColor="Black"
-               FontAttributes="Italic"
-               />
+               FontAttributes="Italic" />
         <Entry x:Name="edtSecondNumber"
                    Keyboard="Numeric"
                    Placeholder="Second Number"
                    IsSpellCheckEnabled="False"
-                   />
-        
+                   TextChanged="edtNumber_TextChanged" />
+
         <StackLayout Orientation="Horizontal" Spacing="7">
-        <Button x:Name="btnAdd"
+            <Button x:Name="btnAdd"
                 Text="+"
-                Clicked="btnCalculateUsingObj_Clicked"
-                />
-        <Button x:Name="btnSubtract"
-                Text="-"    
-                Clicked="btnCalculateUsingObj_Clicked"
-                />
-        <Button x:Name="btnMultiply"
+                Clicked="btnCalculateUsingObj_Clicked" />
+            <Button x:Name="btnSubtract"
+                Text="-"
+                Clicked="btnCalculateUsingObj_Clicked" />
+            <Button x:Name="btnMultiply"
                 Text="*"
-                Clicked="btnCalculateUsingObj_Clicked"
-                />
-        <Button x:Name="btnDivide"
-                Text="/" 
-                Clicked="btnCalculateUsingObj_Clicked"
-                />
+                Clicked="btnCalculateUsingObj_Clicked" />
+            <Button x:Name="btnDivide"
+                Text="/"
+                Clicked="btnCalculateUsingObj_Clicked" />
         </StackLayout>
 
         <Label x:Name="lblResult"
@@ -58,10 +49,6 @@
                FontSize="Large"
                TextColor="green"
                HorizontalTextAlignment="Center"
-               Margin="30,30,30,0"
-               />
-
-
+               Margin="30,30,30,0" />
     </StackLayout>
-
 </ContentPage>

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Calculator
@@ -31,27 +26,28 @@ namespace Calculator
                     case "-":
                         result = firstValue - secondValue;
                         break;
+
                     case "*":
                         result = firstValue * secondValue;
                         break;
+
                     case "/":
                         result = firstValue / secondValue;
                         break;
+
                     default:
                         break;
                 }
                 lblResult.Text = $"Result is\n{result}";
                 lblResult.TextColor = Color.Green;
-
             }
             catch (Exception exception)
             {
                 lblResult.Text = exception.ToString();
                 lblResult.TextColor = Color.Red;
             }
-
-
         }
+
         private void btnCalculateUsingObj_Clicked(object sender, EventArgs e)
         {
             try
@@ -63,11 +59,11 @@ namespace Calculator
 
                 var btn = (Button)sender;
 
-                if(btn == btnSubtract)
+                if (btn == btnSubtract)
                 {
                     result = firstValue - secondValue;
                 }
-                else if(btn == btnMultiply)
+                else if (btn == btnMultiply)
                 {
                     result = firstValue * secondValue;
                 }
@@ -82,16 +78,18 @@ namespace Calculator
 
                 lblResult.Text = $"Result is\n{result}";
                 lblResult.TextColor = Color.Green;
-
-
-
             }
             catch (Exception exception)
             {
                 lblResult.Text = exception.ToString();
                 lblResult.TextColor = Color.Red;
             }
+        }
 
+        private void edtNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lblResult.Text = "Result goes here";
+            lblResult.TextColor = Color.Gray;
         }
     }
 }
