@@ -13,90 +13,85 @@ namespace Calculator
         public MainPage()
         {
             InitializeComponent();
-            lblResult.IsVisible = false;
         }
 
-        private void btnAdd_Clicked(object sender, EventArgs e)
+        private void btnCalculate_Clicked(object sender, EventArgs e)
         {
             try
             {
-                int fistNum = Convert.ToInt32(edtFirstNumber.Text);
-                int secondNum = Convert.ToInt32(edtSecondNumber.Text);
+                Double firstValue = Convert.ToDouble(edtFirstNumber.Text);
+                Double secondValue = Convert.ToDouble(edtSecondNumber.Text);
 
-                int result = fistNum + secondNum;
+                Double result = firstValue + secondValue;
 
-                lblResult.IsVisible = true;
-                lblResult.Text = $"{fistNum} + {secondNum} = {result}";
+                Button btn = (Button)sender;
+
+                switch (btn.Text)
+                {
+                    case "-":
+                        result = firstValue - secondValue;
+                        break;
+                    case "*":
+                        result = firstValue * secondValue;
+                        break;
+                    case "/":
+                        result = firstValue / secondValue;
+                        break;
+                    default:
+                        break;
+                }
+                lblResult.Text = $"Result is\n{result}";
                 lblResult.TextColor = Color.Green;
+
             }
             catch (Exception exception)
             {
-                lblResult.IsVisible = true;
+                lblResult.Text = exception.ToString();
                 lblResult.TextColor = Color.Red;
-                lblResult.Text = $"Invalid numbers! {exception.ToString()}";
             }
-        }
 
-        private void btnSubtract_Clicked(object sender, EventArgs e)
+
+        }
+        private void btnCalculateUsingObj_Clicked(object sender, EventArgs e)
         {
             try
             {
-                int fistNum = Convert.ToInt32(edtFirstNumber.Text);
-                int secondNum = Convert.ToInt32(edtSecondNumber.Text);
+                Double firstValue = Convert.ToDouble(edtFirstNumber.Text);
+                Double secondValue = Convert.ToDouble(edtSecondNumber.Text);
 
-                int result = fistNum - secondNum;
-                lblResult.IsVisible = true;
-                lblResult.Text = $"{fistNum} - {secondNum} = {result}";
+                Double result = firstValue + secondValue;
+
+                var btn = (Button)sender;
+
+                if(btn == btnSubtract)
+                {
+                    result = firstValue - secondValue;
+                }
+                else if(btn == btnMultiply)
+                {
+                    result = firstValue * secondValue;
+                }
+                else if (btn == btnDivide)
+                {
+                    result = firstValue / secondValue;
+                }
+                else
+                {
+                    result = firstValue + secondValue;
+                }
+
+                lblResult.Text = $"Result is\n{result}";
                 lblResult.TextColor = Color.Green;
+
+
+
             }
             catch (Exception exception)
             {
-                lblResult.IsVisible = true;
+                lblResult.Text = exception.ToString();
                 lblResult.TextColor = Color.Red;
-                lblResult.Text = $"Invalid numbers! {exception.ToString()}";
             }
-        }
 
-        private void btnMultiply_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                int fistNum = Convert.ToInt32(edtFirstNumber.Text);
-                int secondNum = Convert.ToInt32(edtSecondNumber.Text);
-
-                int result = fistNum * secondNum;
-
-                lblResult.IsVisible = true;
-                lblResult.Text = $"{fistNum} * {secondNum} = {result}";
-                lblResult.TextColor = Color.Green;
-            }
-            catch (Exception exception)
-            {
-                lblResult.IsVisible = true;
-                lblResult.TextColor = Color.Red;
-                lblResult.Text = $"Invalid numbers! {exception.ToString()}";
-            }
-        }
-
-        private void btnDivide_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                int fistNum = Convert.ToInt32(edtFirstNumber.Text);
-                int secondNum = Convert.ToInt32(edtSecondNumber.Text);
-
-                int result = fistNum / secondNum;
-
-                lblResult.IsVisible = true;
-                lblResult.Text = $"{fistNum} / {secondNum} = {result}";
-                lblResult.TextColor = Color.Green;
-            }
-            catch (Exception exception)
-            {
-                lblResult.IsVisible = true;
-                lblResult.TextColor = Color.Red;
-                lblResult.Text = $"Invalid numbers! {exception.ToString()}";
-            }
         }
     }
 }

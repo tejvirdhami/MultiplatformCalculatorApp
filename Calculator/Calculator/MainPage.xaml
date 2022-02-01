@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.MainPage">
 
-    <StackLayout Padding="20" VerticalOptions="Fill" BackgroundColor="AliceBlue">
+    <StackLayout Padding="20" VerticalOptions="Fill" BackgroundColor="BlanchedAlmond">
 
 
         <Label Text="Adding Numbers"
@@ -37,19 +37,19 @@
         <StackLayout Orientation="Horizontal" Spacing="7">
         <Button x:Name="btnAdd"
                 Text="+"
-                Clicked="btnAdd_Clicked"
+                Clicked="btnCalculateUsingObj_Clicked"
                 />
         <Button x:Name="btnSubtract"
-                Text="-"
-                Clicked="btnSubtract_Clicked"
+                Text="-"    
+                Clicked="btnCalculateUsingObj_Clicked"
                 />
         <Button x:Name="btnMultiply"
                 Text="*"
-                Clicked="btnMultiply_Clicked"
+                Clicked="btnCalculateUsingObj_Clicked"
                 />
         <Button x:Name="btnDivide"
-                Text="/"
-                Clicked="btnDivide_Clicked"
+                Text="/" 
+                Clicked="btnCalculateUsingObj_Clicked"
                 />
         </StackLayout>
 
